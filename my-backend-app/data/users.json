@@ -1,0 +1,30 @@
+[
+  {
+    "Id": 0,
+    "Question": "What is an API?",
+    "AnswerA": "Apple packaging igloo",
+    "AnswerB": "Application programming interface",
+    "TrueAnswer": "B"
+  },
+  {
+    "Id": 1,
+    "Question": "What is REST?",
+    "AnswerA": "Sitting in the woods",
+    "AnswerB": "Representational state transfer",
+    "TrueAnswer": "B"
+  },
+  {
+    "Id": 2,
+    "Question": "What is Git?",
+    "AnswerA": "A slang term for a silly person",
+    "AnswerB": "A distributed version control system",
+    "TrueAnswer": "B"
+  },
+  {
+    "Id": 3,
+    "Question": "What is HTML?",
+    "AnswerA": "A type of metal",
+    "AnswerB": "Hypertext Markup Language",
+    "TrueAnswer": "B"
+  }
+]

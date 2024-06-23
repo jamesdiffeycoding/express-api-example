@@ -1,1 +1,1 @@
-# quizzer-backend-api
+# JS-API
