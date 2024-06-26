@@ -9,8 +9,8 @@ const quizRouter = require('./routes/quiz_router.js')
 // CORS middleware setup
 app.use(cors({
   origin: '*', // Set your desired origin here or use a function for dynamic origin determination
-  methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allowed HTTP methods
-  allowedHeaders: ['Content-Type', 'Authorization'], // Allowed headers
+  methods: ['GET', 'POST', 'PATCH', 'DELETE'], // Allowed HTTP methods
+  allowedHeaders: ['Content-Type', 'Authorization', 'apiKey', 'id'], // Allowed headers
 }));
 
 // Other middleware setup
