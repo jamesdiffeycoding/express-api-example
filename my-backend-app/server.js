@@ -1,4 +1,5 @@
 // console.log("FILE READ: ' server.js'");
+require('dotenv').config();
 
 const express = require("express");
 const app = express();
@@ -13,16 +14,12 @@ app.use(cors({
 }));
 
 // Other middleware setup
-app.get('/favicon.ico', (req, res) => {
-  res.sendFile(__dirname + '/public/favicon.ico');
-});
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.set("view engine", "ejs");
 
 // Route setup
-
 app.use("/api", quizRouter);
 
 // Routes
@@ -31,8 +28,9 @@ app.get("/", (req, res) => {
     // res.send(`This is the homepage`);
 });
 
+
 // Server start
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
     console.log(`Server is listening on port ${PORT}`);
 });
