@@ -14,7 +14,7 @@ async function getQuizById(req, res) {
 async function deleteQuizById(req, res) {
     console.log("delete called")
     try {
-        const response = await fetch(`${supabaseUrl}/rest/v1/notes?id=eq.${req.params.id}`, {
+        const response = await fetch(`${supabaseUrl}/rest/v1/quizzes?id=eq.${req.params.id}`, {
             method: "DELETE",
             headers: {
                 'Content-Type': 'application/json',
@@ -37,29 +37,12 @@ async function deleteQuizById(req, res) {
     }
 }  
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// ----------------- POST - WORKING -------------------------------------------------------------------------------
-
+// ----------------- POST -------------------------------------------------------------------------------
 async function postQuiz(req, res) {
     console.log("post called")
 
     try {
-        const response = await fetch(`${supabaseUrl}/rest/v1/notes`, {
+        const response = await fetch(`${supabaseUrl}/rest/v1/quizzes`, {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',
@@ -83,11 +66,12 @@ async function postQuiz(req, res) {
 
 
 
-
+// ----------------- UPDATE -------------------------------------------------------------------------------
 async function updateQuizById(req, res) {
     console.log("patch called")
+    console.log(JSON.stringify(req.body.data))
     try {
-        const response = await fetch(`${supabaseUrl}/rest/v1/notes?id=eq.${req.params.id}`, {
+        const response = await fetch(`${supabaseUrl}/rest/v1/quizzes?id=eq.${req.params.id}`, {
             method: "PATCH",
             headers: {
                 'Content-Type': 'application/json',
