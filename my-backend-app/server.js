@@ -1,36 +1,35 @@
-// console.log("FILE READ: ' server.js'");
-require('dotenv').config();
+/* 🌎 SERVER JS FILE 🌎 */
+/* This file imports, configures and runs express.
+It imports the quizRouter to handle different api routes. */
 
-const express = require("express");
-const app = express();
-const cors = require('cors');
-const quizRouter = require('./routes/quiz_router.js')
 
-// CORS middleware setup
+/* 🍕 IMPORTS 🍕 */
+require('dotenv').config(); // import dotenv
+const cors = require('cors'); // Import cors
+const express = require("express"); // Import express server
+const app = express(); // Assign express to app 
+const quizRouter = require('./router.js') // Import router
+
+/* 🍕 EXPRESS APP CONFIGURATION 🍕*/
 app.use(cors({
-  origin: '*', // Set your desired origin here or use a function for dynamic origin determination
-  methods: ['GET', 'POST', 'PATCH', 'DELETE'], // Allowed HTTP methods
-  allowedHeaders: ['Content-Type', 'Authorization', 'apiKey', 'id'], // Allowed headers
-}));
+  origin: '*', 
+  methods: ['GET', 'POST', 'PATCH', 'DELETE'], 
+  allowedHeaders: ['Content-Type', 'Authorization', 'apiKey', 'id'], 
+})); // set allowed HTTP methods and Headers
 
-// Other middleware setup
-app.use(express.static("public"));
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
-app.set("view engine", "ejs");
+app.use(express.urlencoded({ extended: true })); // parse url encoded payloads
+app.use(express.json()); // parse JSON, allowing access to req.body
 
-// Route setup
-app.use("/api", quizRouter);
 
-// Routes
+/* 🍕 ROUTING 🍕*/
+app.use("/api", quizRouter); // use custom router
 app.get("/", (req, res) => {
-    res.json({ "message": "Welcome to the homepage" });
-    // res.send(`This is the homepage`);
-});
+    res.send(`The server is up and running on the /api route.`);
+}); // home page message
 
 
-// Server start
-const PORT = process.env.PORT || 3001;
+/* 🍕 INITIALISE SERVER 🍕 */
+const PORT = process.env.PORT || 3001; // use port 3000 unless otherwise specified
 app.listen(PORT, () => {
     console.log(`Server is listening on port ${PORT}`);
 });

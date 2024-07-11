@@ -4,7 +4,6 @@ const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
 
 
 async function getAllQuizzes(req, res) {
-
 }
 
 async function getQuizById(req, res) {
@@ -16,10 +15,7 @@ async function deleteQuizById(req, res) {
     try {
         const response = await fetch(`${supabaseUrl}/rest/v1/quizzes?id=eq.${req.params.id}`, {
             method: "DELETE",
-            headers: {
-                'Content-Type': 'application/json',
-                'apiKey': apiKey
-            },
+            headers: { 'Content-Type': 'application/json', 'apiKey': apiKey },
         });
         if (response.ok) {
             console.log("ok")
@@ -40,7 +36,6 @@ async function deleteQuizById(req, res) {
 // ----------------- POST -------------------------------------------------------------------------------
 async function postQuiz(req, res) {
     console.log("post called")
-
     try {
         const response = await fetch(`${supabaseUrl}/rest/v1/quizzes`, {
             method: "POST",
