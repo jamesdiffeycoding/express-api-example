@@ -24,7 +24,7 @@ app.use(express.json()); // parse JSON, allowing access to req.body
 /* 🍕 ROUTING 🍕*/
 app.use("/api", quizRouter); // use custom router
 app.get("/", (req, res) => {
-    res.send(`The quizzer server is up and running on the /api route.`);
+    res.send(`The quizzer backend server is up and running on the /api route.`);
 }); // home page message
 
 
