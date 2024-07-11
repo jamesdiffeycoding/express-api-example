@@ -1,7 +1,6 @@
 /* 🌎 CONTROLLERS JS FILE 🌎 */
 /* This file contains and exports the functions for interacting with the database. */
 
-
 /* 🍕 IMPORTS 🍕 */
 require('dotenv').config();
 const apiKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
@@ -11,8 +10,7 @@ const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
 /* UNUSED FUNCTIONS NOTICE: Currently only the post, delete and patch functions are fleshed out because
    get can be handled by front end, while onClick functionality is needed
    for posting, deleting and patching. Next JS does not always work well with
-   onClick functionality.
-*/
+   onClick functionality. */
 async function getAllQuizzes(req, res) { }
 
 async function getQuizById(req, res) { }
