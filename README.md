@@ -1,7 +1,7 @@
 # Night Quizzer - Backend API
 
 ## Scripts
-In the my-backend-app folder, npm run devStart runs the server.js file.
+In the my-backend-app folder, npm run devStart runs the server.js file using Nodemon, which auto-refreshes on file change (which is useful for development).
 
 ## Structure
 The server.js file is the base file. 

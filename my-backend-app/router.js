@@ -10,7 +10,14 @@ const quizControllers = require('./controllers.js')
 
 
 /* 🍕 DEFINING ROUTES 🍕 */
-router.get("/quiz", quizControllers.getAllQuizzes)
+/* Defines the routes and their corresponding functions. */
+/* UNUSED FUNCTIONS NOTICE: Currently only the post, delete and patch functions are fleshed out because
+   get can be handled by front end, while onClick functionality is needed
+   for posting, deleting and patching. Next JS does not always work well with
+   onClick functionality.
+*/
+
+router.get("/quiz", quizControllers.getAllQuizzes) 
 router.get("/quiz/:id", quizControllers.getQuizById)
 router.post("/quiz", quizControllers.postQuiz)
 router.delete("/quiz/:id", quizControllers.deleteQuizById)
